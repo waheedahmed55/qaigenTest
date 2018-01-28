@@ -44,6 +44,10 @@ public class SmallestDistanceTest {
 		assertEquals(6,SmallestDistance.findSmallestDistance(numbers2));
 		int[] numbers3 = {1,100000};
 		assertEquals(0,SmallestDistance.findSmallestDistance(numbers3));
+		int[] numbers4 = {1,-1};
+		assertEquals(0,SmallestDistance.findSmallestDistance(numbers4));
+		int[] numbers5 = {-1,-9,-3,-7,-6,-4};
+		assertEquals(3,SmallestDistance.findSmallestDistance(numbers5));
 		
 	}
 
