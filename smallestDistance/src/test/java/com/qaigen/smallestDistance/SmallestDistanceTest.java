@@ -5,24 +5,37 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class SmallestDistanceTest {
-	
+	/*
+	 * if neighbors have the same value so the smallest distance is 0 and must 
+	 * return the index of first one
+	 */
 	@Test
 	public void twoEqualNeighboursHaveTheSmallestDistance(){
 		
 		int[] numbers = {1,2,3,3,5};
 		assertEquals(2,SmallestDistance.findSmallestDistance(numbers));
 	}
+	/*
+	 * an empty array dosn't have smallest distance between neighbor
+	 * we are checking that the method is returning -1 for empty array
+	 */
 	@Test
 	public void emptyArrayShouldReturnMinusOneIndex(){
 		int[] numbers = {};
 		assertEquals(-1,SmallestDistance.findSmallestDistance(numbers));
 	}
+	/*
+	 * An array with one element that has no neighbor must return -1 
+	 */
 	@Test
 	public void oneElementArrayShouldReturnMinusOneIndex(){
 		
 		int[] numbers = {10};
 		assertEquals(-1,SmallestDistance.findSmallestDistance(numbers));
 	}
+	/*
+	 * We are checking some distances in different arrays
+	 */
 	@Test
 	public void checkSomeDistances(){
 		int[] numbers = {5 , 6 , 8 , 3 , 5};
