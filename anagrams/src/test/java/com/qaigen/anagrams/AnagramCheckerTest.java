@@ -6,33 +6,50 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class AnagramCheckerTest {
-	
+	/*
+	 * This test is checking two identical string if they are anagrams
+	 */
 	@Test 
 	public void sameStringsMustBeAnagrams(){
 		
 		assertTrue(AnagramChecker.check("test", "test"));
 	}
+	/*
+	 * this test is checking same string but different cases if they are anagrams
+	 */
 	@Test 
 	public void sameStringsWithDifferentCasesAreAnagrams(){
 
 		assertTrue(AnagramChecker.check("TesT", "test"));
 	}
+	/*
+	 * this test is checking strings with same letters but one of them contains whitespace
+	 */
 	@Test
 	public void sameStringsWithWhiteSpacesAreAnagrams(){
 
 		assertTrue(AnagramChecker.check("Te sT", "test"));
 	}
+	/*
+	 * We test two empty strings
+	 */
 	@Test
 	public void twoEmptyStringsAreAnagrams(){
 		
 		assertTrue(AnagramChecker.check("", ""));
 	}
+	/*
+	 * we are testing only whitespaces 
+	 */
 	@Test
 	public void whiteSpacesOnlyAreAnagrams(){
 		assertTrue(AnagramChecker.check("  ", "  "));
 		assertTrue(AnagramChecker.check(" ", "    "));
 		assertTrue(AnagramChecker.check("    ", "  "));
 	}
+	/*
+	 * We are checking when one or both of strings are null
+	 */
 	@Test
 	public void nullStringsAreNotAnagrams(){
 
@@ -41,6 +58,9 @@ public class AnagramCheckerTest {
 		assertFalse(AnagramChecker.check(null, null));
 		
 	}
+	/*
+	 * checking some string that are anagrams
+	 */
 	@Test 
 	public void anagramStrings(){
 		
@@ -50,6 +70,9 @@ public class AnagramCheckerTest {
 		assertTrue(AnagramChecker.check("a", "A"));
 		
 	}
+	/*
+	 * checking some string that are not anagrams
+	 */
 	@Test 
 	public void notAnagramStrings(){
 		assertFalse(AnagramChecker.check("abc", "ab"));
